@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobile App Quiz & Lernen</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="quiz.js" defer></script>
+</head>
+<body>
+  <!-- Startmenü -->
+  <div id="menu" class="container">
+    <h1>📱 Mobile App Quiz & Lernen</h1>
+    <button onclick="startQuiz()">🎯 Quiz starten</button>
+    <button onclick="startLearning()">📚 Lernkarten</button>
+  </div>
+
+  <!-- Quiz-Bereich -->
+  <div id="quiz-container" class="container" style="display: none;">
+    <!-- Sidebar mit Frage-Buttons -->
+    <div class="sidebar">
+      <h3>Fragen</h3>
+      <ul id="question-nav"></ul>
+    </div>
+
+    <div class="quiz-main">
+      <div class="progress">
+        <span id="progress-text">Frage 1 von 20</span>
+        <div class="progress-bar">
+          <div id="progress-fill"></div>
+        </div>
+      </div>
+
+      <div id="quiz-content">
+        <!-- Hier werden die Fragen angezeigt -->
+      </div>
+
+      <div class="nav-buttons">
+        <button id="prev-btn" onclick="prevQuestion()">⬅ Zurück</button>
+        <button id="next-btn" onclick="nextQuestion()">Weiter ➡</button>
+        <button id="submit-btn" onclick="gradeQuiz()" style="display: none;">📊 Auswerten</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ergebnis-Anzeige -->
+  <div id="result-container" class="container" style="display: none;"></div>
+
+  <!-- Lernkarten-Bereich -->
+  <div id="flashcards-container" class="container" style="display: none;">
+    <h2>🎓 Lernkarten</h2>
+    <div id="flashcard" class="flashcard"></div>
+    <div class="nav-buttons">
+      <button id="prev-card" onclick="prevFlashcard()">⬅ Zurück</button>
+      <button id="next-card" onclick="nextFlashcard()">➡ Weiter</button>
+    </div>
+    <button onclick="returnToMenu()">🔙 Zurück zum Menü</button>
+  </div>
+
+</body>
+</html>
